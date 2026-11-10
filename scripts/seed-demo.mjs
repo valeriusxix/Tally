@@ -125,6 +125,15 @@ async function main() {
     entry: { type: "sale", contactId: aisha, itemId: oil, qty: 2, rawText: "Aisha collect 2 gallon oil.", source: "mic" },
   });
 
+  // A payment reminder waiting for the owner's approval (nothing is sent).
+  await call("draft-reminder", {
+    contactId: musa,
+    channel: "whatsapp",
+    language: "en",
+    message:
+      "Hello Musa, hope business is good. Just a friendly reminder that ₦100,000 is still open for the 2 bags of rice. Thank you! - Bisi Provisions",
+  });
+
   const balances = await call("list-balances", {}, "GET");
   console.log("Seeded Bisi Provisions demo books.");
   console.log(JSON.stringify(balances, null, 2).slice(0, 1500));
