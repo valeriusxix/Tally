@@ -47,6 +47,20 @@ Click **Continue as local dev**, set your currency and timezone, then open
 the agent panel and connect an AI provider (an Anthropic API key under
 **Custom keys** works). Tap the mic or type a note and press **Record**.
 
+### Demo data
+
+To load a week of sample books for a Lagos provisions shop (contacts, stock,
+credit sales, a supplier debt and one open Needs You question), start a
+fresh local database with auth off, then run the seed script against the
+port the dev server prints:
+
+```bash
+AUTH_DISABLED=true pnpm dev
+node scripts/seed-demo.mjs http://127.0.0.1:8080
+```
+
+Seed once per database; running it again adds the entries a second time.
+
 Useful checks:
 
 ```bash

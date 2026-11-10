@@ -1,38 +1,36 @@
 # Visual Design Contract
 
-Chat is a quiet, full-canvas conversation workbench. AgentKit owns the
-conversation primitives; the template owns the surrounding navigation and
-workspace chrome.
+Tally is a quiet, record-first workspace for a small business owner. The
+screens show the books; the agent panel is where notes are spoken or typed.
+AgentKit owns the conversation primitives; the app owns the ledger screens.
 
 ## Product mode
 
 - Mode: `operate`
-- Audience and cadence: frequent users managing many ongoing agent threads.
-- Primary workflow: begin, resume, pin, and organize conversations without
-  leaving the chat canvas.
+- Audience and cadence: shop owners and traders who log many short notes a
+  day, often on a phone, often in more than one language.
+- Primary workflow: speak a note, glance at the entries it produced, fix
+  anything wrong, and answer the few questions the agent couldn't settle.
 
 ## Visual direction
 
-- Direction name: Quiet conversation library
-- Palette family: neutral ink and semantic surfaces; active rows use the
-  existing sidebar accent rather than a separate branded color.
-- Type treatment: dense sans-serif labels with regular-weight conversation
-  titles and restrained section labels.
-- Composition: a persistent conversation library beside a generous chat
-  canvas. New chat is the primary rail action, followed by Pinned and Recents.
-  Account, workspace, settings, and sign-out controls disclose from one footer
-  row instead of competing in the rail.
-- Shape language: borderless lists, soft selected rows, quiet corners, and
-  compact icon controls.
-- Anti-references: icon-only navigation as the default state, floating chips,
-  duplicated settings links, timestamps competing with thread titles, and
-  placeholder destinations that the app does not implement.
+- Direction name: Quiet ledger
+- Palette family: neutral ink and semantic surfaces. Money owed to the owner,
+  money the owner owes, drafts and voids use semantic tokens, never a
+  separate brand color.
+- Type treatment: dense sans-serif labels, tabular figures for every amount,
+  the original note shown in a muted line under each entry.
+- Composition: a persistent rail (Today, Needs You, People, Stock, Recap,
+  Business) beside a content canvas, with the capture bar at the top of Today
+  and the agent in the sidebar.
+- Shape language: borderless lists, soft selected rows, quiet corners, compact
+  icon controls, small chips for assumed values.
 
 ## Guardrails
 
 - Preserve the scaffold's semantic tokens and shared component seams.
-- Keep domain pages distinct from full-page chat and use the AgentSidebar for
-  contextual AI.
-- Compare sibling apps before reusing their palette or composition.
-- Keep pinning, rename, archive, and routing wired to the shared chat thread
-  model; the sidebar is a presentation layer, not a second history store.
+- Every number on screen comes from an action result; never format money
+  outside `shared/money.ts`.
+- Keep domain screens distinct from full-page chat and use the AgentSidebar
+  for contextual AI.
+- No placeholder destinations: every rail item opens a working screen.

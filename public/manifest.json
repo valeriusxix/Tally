@@ -1,8 +1,8 @@
 {
   "name": "Tally",
   "short_name": "Tally",
-  "description": "Workspace app for Tally.",
-  "start_url": "./home",
+  "description": "Voice-first books for small businesses. Speak a note; Tally keeps your sales, debts and stock.",
+  "start_url": "./today",
   "background_color": "#111111",
   "theme_color": "#18181B",
   "icons": [
